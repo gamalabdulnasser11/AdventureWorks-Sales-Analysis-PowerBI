@@ -25,20 +25,21 @@ Power BI dashboard analyzing sales performance, revenue trends, and key product 
 
 ## Key DAX Measures
 
-- Total Revenue:
-  Total Revenue = SUMX(Fact_Sales, Fact_Sales[OrderQty] * Fact_Sales[UnitPrice])
+```dax
+// Total Revenue
+Total Revenue = SUMX(Fact_Sales, Fact_Sales[OrderQty] * Fact_Sales[UnitPrice])
 
-- Total Orders:
-  Total Orders = DISTINCTCOUNT(Fact_Sales[SalesOrderID])
+// Total Orders
+Total Orders = DISTINCTCOUNT(Fact_Sales[SalesOrderID])
 
-- Units Sold:
-  Unit Sold = SUM(Fact_Sales[OrderQty])
+// Total Units Sold
+Unit Sold = SUM(Fact_Sales[OrderQty])
 
-- Average Order Value:
-  Average Order Value = DIVIDE([Total Revenue], [Total Orders], 0)
+// Average Order Value
+Average Order Value = DIVIDE([Total Revenue], [Total Orders], 0)
 
-- Average Unit Price:
-  Avg Unit Price = AVERAGE(Fact_Sales[UnitPrice])
+// Average Unit Price
+Avg Unit Price = AVERAGE(Fact_Sales[UnitPrice])
 
 ---
 
